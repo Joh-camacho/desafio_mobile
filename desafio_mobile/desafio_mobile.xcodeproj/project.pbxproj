@@ -17,6 +17,11 @@
 		B2BC60AB29357570000BFE47 /* desafio_mobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60AA29357570000BFE47 /* desafio_mobileTests.swift */; };
 		B2BC60B529357570000BFE47 /* desafio_mobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60B429357570000BFE47 /* desafio_mobileUITests.swift */; };
 		B2BC60B729357570000BFE47 /* desafio_mobileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60B629357570000BFE47 /* desafio_mobileUITestsLaunchTests.swift */; };
+		B2BC60C4293576DD000BFE47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2BC60C3293576DC000BFE47 /* GoogleService-Info.plist */; };
+		B2BC60C729357E12000BFE47 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B2BC60C629357E12000BFE47 /* FirebaseAnalytics */; };
+		B2BC60C929357E12000BFE47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B2BC60C829357E12000BFE47 /* FirebaseAuth */; };
+		B2BC60CB29357E12000BFE47 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B2BC60CA29357E12000BFE47 /* FirebaseCrashlytics */; };
+		B2BC60CD29357E12000BFE47 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B2BC60CC29357E12000BFE47 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,7 @@
 		B2BC60B029357570000BFE47 /* desafio_mobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desafio_mobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BC60B429357570000BFE47 /* desafio_mobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafio_mobileUITests.swift; sourceTree = "<group>"; };
 		B2BC60B629357570000BFE47 /* desafio_mobileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafio_mobileUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B2BC60C3293576DC000BFE47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2BC60CB29357E12000BFE47 /* FirebaseCrashlytics in Frameworks */,
+				B2BC60CD29357E12000BFE47 /* FirebaseFirestore in Frameworks */,
+				B2BC60C729357E12000BFE47 /* FirebaseAnalytics in Frameworks */,
+				B2BC60C929357E12000BFE47 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +118,7 @@
 				B2BC609C2935756F000BFE47 /* Assets.xcassets */,
 				B2BC609E2935756F000BFE47 /* LaunchScreen.storyboard */,
 				B2BC60A12935756F000BFE47 /* Info.plist */,
+				B2BC60C3293576DC000BFE47 /* GoogleService-Info.plist */,
 				B2BC60992935756E000BFE47 /* desafio_mobile.xcdatamodeld */,
 			);
 			path = desafio_mobile;
@@ -146,6 +157,12 @@
 			dependencies = (
 			);
 			name = desafio_mobile;
+			packageProductDependencies = (
+				B2BC60C629357E12000BFE47 /* FirebaseAnalytics */,
+				B2BC60C829357E12000BFE47 /* FirebaseAuth */,
+				B2BC60CA29357E12000BFE47 /* FirebaseCrashlytics */,
+				B2BC60CC29357E12000BFE47 /* FirebaseFirestore */,
+			);
 			productName = desafio_mobile;
 			productReference = B2BC608D2935756E000BFE47 /* desafio_mobile.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +235,9 @@
 				Base,
 			);
 			mainGroup = B2BC60842935756E000BFE47;
+			packageReferences = (
+				B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = B2BC608E2935756E000BFE47 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2BC60A02935756F000BFE47 /* LaunchScreen.storyboard in Resources */,
+				B2BC60C4293576DD000BFE47 /* GoogleService-Info.plist in Resources */,
 				B2BC609D2935756F000BFE47 /* Assets.xcassets in Resources */,
 				B2BC60982935756E000BFE47 /* Main.storyboard in Resources */,
 			);
@@ -606,6 +627,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2BC60C629357E12000BFE47 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		B2BC60C829357E12000BFE47 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		B2BC60CA29357E12000BFE47 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		B2BC60CC29357E12000BFE47 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B2BC60992935756E000BFE47 /* desafio_mobile.xcdatamodeld */ = {
