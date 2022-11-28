@@ -111,15 +111,11 @@
 		B2BC608F2935756E000BFE47 /* desafio_mobile */ = {
 			isa = PBXGroup;
 			children = (
-				B2BC60902935756E000BFE47 /* AppDelegate.swift */,
-				B2BC60922935756E000BFE47 /* SceneDelegate.swift */,
-				B2BC60942935756E000BFE47 /* ViewController.swift */,
-				B2BC60962935756E000BFE47 /* Main.storyboard */,
-				B2BC609C2935756F000BFE47 /* Assets.xcassets */,
-				B2BC609E2935756F000BFE47 /* LaunchScreen.storyboard */,
-				B2BC60A12935756F000BFE47 /* Info.plist */,
-				B2BC60C3293576DC000BFE47 /* GoogleService-Info.plist */,
-				B2BC60992935756E000BFE47 /* desafio_mobile.xcdatamodeld */,
+				B2BC60CE29358170000BFE47 /* Core */,
+				B2BC60CF29358183000BFE47 /* Views */,
+				B2BC60D029358196000BFE47 /* Models */,
+				B2BC60D22935831B000BFE47 /* Services */,
+				B2BC60D1293581A5000BFE47 /* Resources */,
 			);
 			path = desafio_mobile;
 			sourceTree = "<group>";
@@ -139,6 +135,50 @@
 				B2BC60B629357570000BFE47 /* desafio_mobileUITestsLaunchTests.swift */,
 			);
 			path = desafio_mobileUITests;
+			sourceTree = "<group>";
+		};
+		B2BC60CE29358170000BFE47 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B2BC60902935756E000BFE47 /* AppDelegate.swift */,
+				B2BC60922935756E000BFE47 /* SceneDelegate.swift */,
+				B2BC60A12935756F000BFE47 /* Info.plist */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B2BC60CF29358183000BFE47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B2BC60942935756E000BFE47 /* ViewController.swift */,
+				B2BC60962935756E000BFE47 /* Main.storyboard */,
+				B2BC609E2935756F000BFE47 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B2BC60D029358196000BFE47 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B2BC60992935756E000BFE47 /* desafio_mobile.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B2BC60D1293581A5000BFE47 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B2BC609C2935756F000BFE47 /* Assets.xcassets */,
+				B2BC60C3293576DC000BFE47 /* GoogleService-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B2BC60D22935831B000BFE47 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,7 +504,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6D5984MR54;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = desafio_mobile/Info.plist;
+				INFOPLIST_FILE = desafio_mobile/Core/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -492,7 +532,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6D5984MR54;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = desafio_mobile/Info.plist;
+				INFOPLIST_FILE = desafio_mobile/Core/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
