@@ -31,7 +31,6 @@ struct AuthValidation {
     
     func validatePassword(_ password: String?) throws -> String {
         guard let password = password else { throw AuthValidationError.nilValue }
-        guard !password.isEmpty else { throw AuthValidationError.nilValue }
         guard password.count >= 8 else { throw AuthValidationError.passwordTooShort }
         guard password.count < 20 else { throw AuthValidationError.passwordTooLong }
         
