@@ -12,7 +12,7 @@ import CoreData
 protocol PersistenceProtocol {
     
     func createUser(email: String, userUid uid: String)
-    func updateUserLocation(userUid uid: String, latitude: String, longitude: String)
+    func updateUserLocation(userUid uid: String, latitude: Double, longitude: Double)
     
 }
 
@@ -33,7 +33,7 @@ struct FirestoreService: PersistenceProtocol {
         ])
     }
     
-    func updateUserLocation(userUid uid: String, latitude: String, longitude: String) {
+    func updateUserLocation(userUid uid: String, latitude: Double, longitude: Double) {
         let document = db.collection(collection).document(uid)
         
         document.updateData([
@@ -69,7 +69,7 @@ struct CoredataService: PersistenceProtocol {
         saveContext()
     }
     
-    func updateUserLocation(userUid uid: String, latitude: String, longitude: String) {
+    func updateUserLocation(userUid uid: String, latitude: Double, longitude: Double) {
         do {
             let fetch = CDUser.fetchRequest()
             let users = try container.viewContext.fetch(fetch)

@@ -65,8 +65,8 @@ extension HomeViewModel: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         
-        let latitude = location.coordinate.latitude.description
-        let longitude = location.coordinate.longitude.description
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
         
         Analytics.logEvent("location", parameters: [
             "latitude": latitude,
