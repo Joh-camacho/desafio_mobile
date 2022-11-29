@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		B2BC60912935756E000BFE47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60902935756E000BFE47 /* AppDelegate.swift */; };
 		B2BC60932935756E000BFE47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60922935756E000BFE47 /* SceneDelegate.swift */; };
-		B2BC60952935756E000BFE47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60942935756E000BFE47 /* ViewController.swift */; };
-		B2BC60982935756E000BFE47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BC60962935756E000BFE47 /* Main.storyboard */; };
 		B2BC609B2935756E000BFE47 /* desafio_mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60992935756E000BFE47 /* desafio_mobile.xcdatamodeld */; };
 		B2BC609D2935756F000BFE47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2BC609C2935756F000BFE47 /* Assets.xcassets */; };
 		B2BC60A02935756F000BFE47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BC609E2935756F000BFE47 /* LaunchScreen.storyboard */; };
@@ -22,6 +20,10 @@
 		B2BC60C929357E12000BFE47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B2BC60C829357E12000BFE47 /* FirebaseAuth */; };
 		B2BC60CB29357E12000BFE47 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B2BC60CA29357E12000BFE47 /* FirebaseCrashlytics */; };
 		B2BC60CD29357E12000BFE47 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B2BC60CC29357E12000BFE47 /* FirebaseFirestore */; };
+		B2DD4B7A29358FF70076978B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DD4B7829358FF70076978B /* HomeViewController.swift */; };
+		B2DD4B7B29358FF70076978B /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2DD4B7929358FF70076978B /* HomeView.xib */; };
+		B2DD4B7E293591560076978B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DD4B7D293591560076978B /* LoginViewController.swift */; };
+		B2DD4B80293591640076978B /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2DD4B7F293591640076978B /* LoginView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +47,6 @@
 		B2BC608D2935756E000BFE47 /* desafio_mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafio_mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BC60902935756E000BFE47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2BC60922935756E000BFE47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B2BC60942935756E000BFE47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B2BC60972935756E000BFE47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2BC609A2935756E000BFE47 /* desafio_mobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = desafio_mobile.xcdatamodel; sourceTree = "<group>"; };
 		B2BC609C2935756F000BFE47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2BC609F2935756F000BFE47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +57,10 @@
 		B2BC60B429357570000BFE47 /* desafio_mobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafio_mobileUITests.swift; sourceTree = "<group>"; };
 		B2BC60B629357570000BFE47 /* desafio_mobileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafio_mobileUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B2BC60C3293576DC000BFE47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B2DD4B7829358FF70076978B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B2DD4B7929358FF70076978B /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		B2DD4B7D293591560076978B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B2DD4B7F293591640076978B /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +154,8 @@
 		B2BC60CF29358183000BFE47 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B2BC60942935756E000BFE47 /* ViewController.swift */,
-				B2BC60962935756E000BFE47 /* Main.storyboard */,
+				B2DD4B7729358FAA0076978B /* Home */,
+				B2DD4B7C293591480076978B /* Login */,
 				B2BC609E2935756F000BFE47 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -179,6 +183,24 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B2DD4B7729358FAA0076978B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B2DD4B7829358FF70076978B /* HomeViewController.swift */,
+				B2DD4B7929358FF70076978B /* HomeView.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B2DD4B7C293591480076978B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B2DD4B7D293591560076978B /* LoginViewController.swift */,
+				B2DD4B7F293591640076978B /* LoginView.xib */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,8 +318,9 @@
 			files = (
 				B2BC60A02935756F000BFE47 /* LaunchScreen.storyboard in Resources */,
 				B2BC60C4293576DD000BFE47 /* GoogleService-Info.plist in Resources */,
+				B2DD4B7B29358FF70076978B /* HomeView.xib in Resources */,
+				B2DD4B80293591640076978B /* LoginView.xib in Resources */,
 				B2BC609D2935756F000BFE47 /* Assets.xcassets in Resources */,
-				B2BC60982935756E000BFE47 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,9 +345,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2BC60952935756E000BFE47 /* ViewController.swift in Sources */,
+				B2DD4B7A29358FF70076978B /* HomeViewController.swift in Sources */,
 				B2BC609B2935756E000BFE47 /* desafio_mobile.xcdatamodeld in Sources */,
 				B2BC60912935756E000BFE47 /* AppDelegate.swift in Sources */,
+				B2DD4B7E293591560076978B /* LoginViewController.swift in Sources */,
 				B2BC60932935756E000BFE47 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,14 +386,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B2BC60962935756E000BFE47 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2BC60972935756E000BFE47 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B2BC609E2935756F000BFE47 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -507,7 +523,6 @@
 				INFOPLIST_FILE = desafio_mobile/Core/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -535,7 +550,6 @@
 				INFOPLIST_FILE = desafio_mobile/Core/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
