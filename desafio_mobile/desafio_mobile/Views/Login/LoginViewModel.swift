@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAnalytics
 import FirebaseAuth
 
 protocol LoginViewDelegate: AnyObject {
@@ -37,12 +38,24 @@ class LoginViewModel {
                 
                 switch response {
                 case .success(let user):
+                    Analytics.logEvent(AnalyticsEventLogin, parameters: [AnalyticsParameterSuccess: true])
+                    
                     self.delegate?.authService(didAuthenticate: user)
                 case .failure(let error):
+                    Analytics.logEvent(AnalyticsEventLogin, parameters: [
+                        AnalyticsParameterSuccess: false,
+                        "error": error.localizedDescription
+                    ])
+                    
                     self.delegate?.authService(didFailToAuthorizeWith: error)
                 }
             }
         } catch {
+            Analytics.logEvent(AnalyticsEventLogin, parameters: [
+                AnalyticsParameterSuccess: false,
+                "error": error.localizedDescription
+            ])
+            
             delegate?.authService(didFailToAuthorizeWith: error)
         }
     }
@@ -57,12 +70,24 @@ class LoginViewModel {
                 
                 switch response {
                 case .success(let user):
+                    Analytics.logEvent(AnalyticsEventSignUp, parameters: [AnalyticsParameterSuccess: true])
+                    
                     self.delegate?.authService(didAuthenticate: user)
                 case .failure(let error):
+                    Analytics.logEvent(AnalyticsEventSignUp, parameters: [
+                        AnalyticsParameterSuccess: false,
+                        "error": error.localizedDescription
+                    ])
+                    
                     self.delegate?.authService(didFailToAuthorizeWith: error)
                 }
             }
         } catch {
+            Analytics.logEvent(AnalyticsEventSignUp, parameters: [
+                AnalyticsParameterSuccess: false,
+                "error": error.localizedDescription
+            ])
+            
             delegate?.authService(didFailToAuthorizeWith: error)
         }
     }

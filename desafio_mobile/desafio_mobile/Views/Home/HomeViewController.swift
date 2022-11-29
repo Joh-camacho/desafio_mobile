@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import FirebaseAnalytics
 
 class HomeViewController: UIViewController {
     
@@ -47,16 +48,27 @@ extension HomeViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch locationManager.authorizationStatus {
         case .authorizedWhenInUse, .authorizedAlways:
+            Analytics.logEvent("permission_location", parameters: [
+                "granted": true,
+                "authorization_status": locationManager.authorizationStatus
+            ])
+            
             locationManager.requestLocation()
             
             mapView.showsUserLocation = true
         case .restricted, .denied:
-            // TODO: Present alert error
-            fatalError("Autorização negada.")
+            Analytics.logEvent("permission_location", parameters: [
+                "granted": false,
+                "authorization_status": locationManager.authorizationStatus
+            ])
+            
+            presentAlert(withMessage: "To use the app we need your location.")
+            break
         case .notDetermined:
+            Analytics.logEvent("request_permission_location", parameters: nil)
+            
             locationManager.requestWhenInUseAuthorization()
         @unknown default:
-            // TODO: Present alert error
             fatalError()
         }
     }
@@ -64,11 +76,15 @@ extension HomeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         
+        Analytics.logEvent("location", parameters: [
+            "latitude": location.coordinate.latitude,
+            "longitude": location.coordinate.longitude
+        ])
+        
         updateMap(location)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        // TODO: Present alert error
-        print("[MapViewController] didFailWithError(error: \(error))")
+        presentAlert(withError: error)
     }
 }
