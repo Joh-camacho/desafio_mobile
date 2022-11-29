@@ -33,7 +33,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.delegate = self
-        viewModel.requestLocation()
+        viewModel.loadLastLocation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.requestCurrentLocation()
     }
 }
 

@@ -41,6 +41,24 @@ struct FirestoreService: PersistenceProtocol {
             "last_longitude": longitude
         ])
     }
+    
+    func getUserInfo(userUid uid: String, completion: @escaping (Result<DocumentSnapshot, Error>) -> Void) {
+        let document = db.collection(collection).document(uid)
+        
+        document.getDocument { document, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let document = document, document.exists else {
+                completion(.failure(FirestoreErrorCode(.notFound)))
+                return
+            }
+            
+            completion(.success(document))
+        }
+    }
 }
 
 struct CoredataService: PersistenceProtocol {
@@ -75,7 +93,7 @@ struct CoredataService: PersistenceProtocol {
             let users = try container.viewContext.fetch(fetch)
             
             guard let user = users.first(where: { $0.id == uid }) else {
-                fatalError("User not created.")
+                return
             }
             
             user.last_latitude = latitude

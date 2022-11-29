@@ -28,7 +28,31 @@ class HomeViewModel: NSObject {
     
     weak var delegate: HomeViewDelegate?
     
-    func requestLocation() {
+    func loadLastLocation() {
+        guard let user = AuthService.shared.getCurrentUser() else { return }
+        
+        FirestoreService.shared.getUserInfo(userUid: user.uid) { [weak self] response in
+            guard let self = self else { return }
+            
+            switch response {
+            case .success(let data):
+                let lastLatitude = data["last_latitude"] as? Double
+                let lastLongitude = data["last_longitude"] as? Double
+                
+                guard let lastLatitude = lastLatitude, let lastLongitude = lastLongitude else {
+                    return
+                }
+                
+                let location = CLLocation(latitude: lastLatitude, longitude: lastLongitude)
+                
+                self.delegate?.locationService(didUpdateLocation: location)
+            case .failure(let error):
+                self.delegate?.locationService(didFailToUpdateLocationWith: error)
+            }
+        }
+    }
+    
+    func requestCurrentLocation() {
         locationManager.delegate = self
     }
 }
