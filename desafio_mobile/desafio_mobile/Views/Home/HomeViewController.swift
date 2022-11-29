@@ -50,7 +50,7 @@ extension HomeViewController: CLLocationManagerDelegate {
         case .authorizedWhenInUse, .authorizedAlways:
             Analytics.logEvent("permission_location", parameters: [
                 "granted": true,
-                "authorization_status": locationManager.authorizationStatus
+                "authorization_status": locationManager.authorizationStatus.rawValue
             ])
             
             locationManager.requestLocation()
@@ -59,7 +59,7 @@ extension HomeViewController: CLLocationManagerDelegate {
         case .restricted, .denied:
             Analytics.logEvent("permission_location", parameters: [
                 "granted": false,
-                "authorization_status": locationManager.authorizationStatus
+                "authorization_status": locationManager.authorizationStatus.rawValue
             ])
             
             presentAlert(withMessage: "To use the app we need your location.")
