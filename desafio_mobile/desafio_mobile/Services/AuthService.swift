@@ -46,4 +46,8 @@ struct AuthService {
             completion(.success(result.user))
         }
     }
+    
+    func getCurrentUser() -> User? {
+        return Auth.auth().currentUser
+    }
 }

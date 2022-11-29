@@ -34,11 +34,16 @@ class HomeViewController: UIViewController {
 // MARK: - Private functions
 extension HomeViewController {
     
-    private func updateMap(_ location: CLLocation) {
+    private func updateMap(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-        let region = MKCoordinateRegion(center: location.coordinate, span: span)
+        let region = MKCoordinateRegion(center: coordinate, span: span)
         
         mapView.setRegion(region, animated: true)
+    }
+    
+    private func updateMap(_ location: CLLocation) {
+        updateMap(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
     }
 }
 
@@ -53,9 +58,7 @@ extension HomeViewController: CLLocationManagerDelegate {
                 "authorization_status": locationManager.authorizationStatus.rawValue
             ])
             
-            locationManager.requestLocation()
-            
-            mapView.showsUserLocation = true
+            locationManager.startUpdatingLocation()
         case .restricted, .denied:
             Analytics.logEvent("permission_location", parameters: [
                 "granted": false,
@@ -76,15 +79,26 @@ extension HomeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         
+        let latitude = location.coordinate.latitude.description
+        let longitude = location.coordinate.longitude.description
+        
         Analytics.logEvent("location", parameters: [
-            "latitude": location.coordinate.latitude,
-            "longitude": location.coordinate.longitude
+            "latitude": latitude,
+            "longitude": longitude
         ])
+        
+        if let user = AuthService.shared.getCurrentUser() {
+            StoreService.shared.updateUserLocation(userUid: user.uid, latitude: latitude, longitude: longitude)
+        }
         
         updateMap(location)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        if let error = error as? CLError, error.code == .locationUnknown {
+            return
+        }
+        
         presentAlert(withError: error)
     }
 }
