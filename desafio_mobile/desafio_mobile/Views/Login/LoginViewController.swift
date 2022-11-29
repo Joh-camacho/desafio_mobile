@@ -31,7 +31,12 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
         viewModel.delegate = self
+        
+        initializeHideKeyboard()
     }
 }
 
@@ -74,6 +79,34 @@ extension LoginViewController {
     private func disableInteractions() {
         view.isUserInteractionEnabled = false
     }
+    
+    private func initializeHideKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+        default:
+            passwordTextField.resignFirstResponder()
+            
+            loginButtonTouched()
+        }
+
+        return true
+    }
+    
 }
 
 // MARK: - LoginViewDelegate

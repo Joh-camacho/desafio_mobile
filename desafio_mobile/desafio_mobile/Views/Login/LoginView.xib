@@ -21,23 +21,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ru-bY-6d3">
-                    <rect key="frame" x="156" y="259" width="81" height="40"/>
+                    <rect key="frame" x="156" y="159" width="81" height="40"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6OF-Vh-Inc">
-                    <rect key="frame" x="40" y="349" width="313" height="34"/>
+                    <rect key="frame" x="40" y="249" width="313" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8el-ud-0oM">
-                    <rect key="frame" x="40" y="408" width="313" height="34"/>
+                    <rect key="frame" x="40" y="308" width="313" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcb-4N-r9g">
-                    <rect key="frame" x="40" y="492" width="313" height="40"/>
+                    <rect key="frame" x="40" y="392" width="313" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="OPd-HQ-aZQ"/>
                     </constraints>
@@ -50,7 +50,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEX-Ch-jdh">
-                    <rect key="frame" x="157" y="547" width="79.333333333333314" height="40"/>
+                    <rect key="frame" x="157" y="447" width="79.333333333333314" height="40"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="tinted" title="Sign Up" cornerStyle="large">
                         <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="15"/>
@@ -75,7 +75,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8el-ud-0oM" secondAttribute="trailing" constant="40" id="Ux5-Ux-GQt"/>
                 <constraint firstItem="fcb-4N-r9g" firstAttribute="top" secondItem="8el-ud-0oM" secondAttribute="bottom" constant="50" id="ZCc-z5-p75"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6OF-Vh-Inc" secondAttribute="trailing" constant="40" id="cny-uD-cwR"/>
-                <constraint firstItem="9ru-bY-6d3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="200" id="hxe-SH-05J"/>
+                <constraint firstItem="9ru-bY-6d3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="hxe-SH-05J"/>
                 <constraint firstItem="8el-ud-0oM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="hxq-vo-LMm"/>
                 <constraint firstItem="6OF-Vh-Inc" firstAttribute="top" secondItem="9ru-bY-6d3" secondAttribute="bottom" constant="50" id="uRw-Qh-jrP"/>
                 <constraint firstItem="fcb-4N-r9g" firstAttribute="centerX" secondItem="8el-ud-0oM" secondAttribute="centerX" id="vtT-5r-y3f"/>
