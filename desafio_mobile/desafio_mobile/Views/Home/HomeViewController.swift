@@ -88,7 +88,8 @@ extension HomeViewController: CLLocationManagerDelegate {
         ])
         
         if let user = AuthService.shared.getCurrentUser() {
-            StoreService.shared.updateUserLocation(userUid: user.uid, latitude: latitude, longitude: longitude)
+            FirestoreService.shared.updateUserLocation(userUid: user.uid, latitude: latitude, longitude: longitude)
+            CoredataService.shared.updateUserLocation(userUid: user.uid, latitude: latitude, longitude: longitude)
         }
         
         updateMap(location)

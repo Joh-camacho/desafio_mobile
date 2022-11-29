@@ -72,7 +72,8 @@ class LoginViewModel {
                 case .success(let user):
                     Analytics.logEvent(AnalyticsEventSignUp, parameters: [AnalyticsParameterSuccess: true])
                     
-                    StoreService.shared.createUser(email: email, userUid: user.uid)
+                    FirestoreService.shared.createUser(email: email, userUid: user.uid)
+                    CoredataService.shared.createUser(email: email, userUid: user.uid)
                     
                     self.delegate?.authService(didAuthenticate: user)
                 case .failure(let error):

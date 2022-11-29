@@ -11,7 +11,7 @@
 		B20145F62935B64B002BB6B0 /* AuthValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20145F52935B64B002BB6B0 /* AuthValidation.swift */; };
 		B20145F82935BA71002BB6B0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20145F72935BA71002BB6B0 /* LoginViewModel.swift */; };
 		B20145FB2935C2A1002BB6B0 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20145FA2935C2A1002BB6B0 /* UIViewController+Extensions.swift */; };
-		B20145FE29364778002BB6B0 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20145FD29364777002BB6B0 /* StoreService.swift */; };
+		B2014600293675B8002BB6B0 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20145FF293675B8002BB6B0 /* PersistenceService.swift */; };
 		B2BC60912935756E000BFE47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60902935756E000BFE47 /* AppDelegate.swift */; };
 		B2BC60932935756E000BFE47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60922935756E000BFE47 /* SceneDelegate.swift */; };
 		B2BC609B2935756E000BFE47 /* desafio_mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60992935756E000BFE47 /* desafio_mobile.xcdatamodeld */; };
@@ -53,7 +53,7 @@
 		B20145F52935B64B002BB6B0 /* AuthValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidation.swift; sourceTree = "<group>"; };
 		B20145F72935BA71002BB6B0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B20145FA2935C2A1002BB6B0 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		B20145FD29364777002BB6B0 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
+		B20145FF293675B8002BB6B0 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		B2BC608D2935756E000BFE47 /* desafio_mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafio_mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BC60902935756E000BFE47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2BC60922935756E000BFE47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 			children = (
 				B20145F02935AFEC002BB6B0 /* AuthService.swift */,
 				B20145F52935B64B002BB6B0 /* AuthValidation.swift */,
-				B20145FD29364777002BB6B0 /* StoreService.swift */,
+				B20145FF293675B8002BB6B0 /* PersistenceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -394,13 +394,13 @@
 				B2DD4B7A29358FF70076978B /* HomeViewController.swift in Sources */,
 				B2BC609B2935756E000BFE47 /* desafio_mobile.xcdatamodeld in Sources */,
 				B2BC60912935756E000BFE47 /* AppDelegate.swift in Sources */,
+				B2014600293675B8002BB6B0 /* PersistenceService.swift in Sources */,
 				B20145F62935B64B002BB6B0 /* AuthValidation.swift in Sources */,
 				B20145FB2935C2A1002BB6B0 /* UIViewController+Extensions.swift in Sources */,
 				B20145F82935BA71002BB6B0 /* LoginViewModel.swift in Sources */,
 				B20145F12935AFEC002BB6B0 /* AuthService.swift in Sources */,
 				B2DD4B7E293591560076978B /* LoginViewController.swift in Sources */,
 				B2BC60932935756E000BFE47 /* SceneDelegate.swift in Sources */,
-				B20145FE29364778002BB6B0 /* StoreService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
