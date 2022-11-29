@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="desafio_mobile" customModuleProvider="target">
             <connections>
+                <outlet property="mapView" destination="siF-WQ-Xpi" id="I84-MV-sEM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +19,20 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="siF-WQ-Xpi">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <standardMapConfiguration key="preferredConfiguration"/>
+                </mapView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="siF-WQ-Xpi" secondAttribute="bottom" id="3fV-Rc-oxS"/>
+                <constraint firstItem="siF-WQ-Xpi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GrJ-LC-oot"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="siF-WQ-Xpi" secondAttribute="trailing" id="ecK-Z8-MIh"/>
+                <constraint firstItem="siF-WQ-Xpi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hIl-QN-LF4"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>

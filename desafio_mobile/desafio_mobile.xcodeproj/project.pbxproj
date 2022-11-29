@@ -521,6 +521,7 @@
 				DEVELOPMENT_TEAM = 6D5984MR54;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = desafio_mobile/Core/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Geolocation is needed to show your location on the map.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -548,6 +549,7 @@
 				DEVELOPMENT_TEAM = 6D5984MR54;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = desafio_mobile/Core/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Geolocation is needed to show your location on the map.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
