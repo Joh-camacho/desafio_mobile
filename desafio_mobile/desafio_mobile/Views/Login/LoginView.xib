@@ -42,9 +42,21 @@
                         <constraint firstAttribute="height" constant="40" id="OPd-HQ-aZQ"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Login" cornerStyle="large"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Login" cornerStyle="large">
+                        <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="20"/>
+                    </buttonConfiguration>
                     <connections>
                         <action selector="loginButtonTouched" destination="-1" eventType="touchUpInside" id="lEB-zx-s4W"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEX-Ch-jdh">
+                    <rect key="frame" x="157" y="547" width="79.333333333333314" height="40"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="tinted" title="Sign Up" cornerStyle="large">
+                        <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="15"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="signUpButtonTouched" destination="-1" eventType="touchUpInside" id="zLJ-jX-Fh4"/>
                     </connections>
                 </button>
             </subviews>
@@ -52,11 +64,14 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="8el-ud-0oM" firstAttribute="centerX" secondItem="6OF-Vh-Inc" secondAttribute="centerX" id="0ny-Ce-c3T"/>
+                <constraint firstItem="fEX-Ch-jdh" firstAttribute="height" secondItem="fcb-4N-r9g" secondAttribute="height" id="2SK-gh-D6x"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fcb-4N-r9g" secondAttribute="trailing" constant="40" id="43I-q3-5Fs"/>
+                <constraint firstItem="fEX-Ch-jdh" firstAttribute="centerX" secondItem="fcb-4N-r9g" secondAttribute="centerX" id="6uM-ck-hma"/>
                 <constraint firstItem="fcb-4N-r9g" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="8jw-9w-zM8"/>
                 <constraint firstItem="9ru-bY-6d3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="93T-Wm-1Df"/>
                 <constraint firstItem="6OF-Vh-Inc" firstAttribute="centerX" secondItem="9ru-bY-6d3" secondAttribute="centerX" id="EBf-0u-VQ9"/>
                 <constraint firstItem="8el-ud-0oM" firstAttribute="top" secondItem="6OF-Vh-Inc" secondAttribute="bottom" constant="25" id="JF2-fY-zVc"/>
+                <constraint firstItem="fEX-Ch-jdh" firstAttribute="top" secondItem="fcb-4N-r9g" secondAttribute="bottom" constant="15" id="PQl-R1-imx"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8el-ud-0oM" secondAttribute="trailing" constant="40" id="Ux5-Ux-GQt"/>
                 <constraint firstItem="fcb-4N-r9g" firstAttribute="top" secondItem="8el-ud-0oM" secondAttribute="bottom" constant="50" id="ZCc-z5-p75"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6OF-Vh-Inc" secondAttribute="trailing" constant="40" id="cny-uD-cwR"/>

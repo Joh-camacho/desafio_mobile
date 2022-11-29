@@ -30,4 +30,20 @@ struct AuthService {
             completion(.success(result.user))
         }
     }
+    
+    func registerUser(email: String, password: String, completion: @escaping completionHandler) {
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let result = result else {
+                completion(.failure(AuthErrorCode(.internalError)))
+                return
+            }
+            
+            completion(.success(result.user))
+        }
+    }
 }

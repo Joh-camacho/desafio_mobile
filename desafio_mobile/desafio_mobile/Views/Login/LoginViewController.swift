@@ -33,6 +33,10 @@ class LoginViewController: UIViewController {
         
         viewModel.delegate = self
     }
+}
+
+// MARK: - IBActions
+extension LoginViewController {
     
     @IBAction func loginButtonTouched() {
         let email = emailTextField.text
@@ -41,6 +45,15 @@ class LoginViewController: UIViewController {
         disableInteractions()
         
         viewModel.loginUser(email: email, password: password)
+    }
+    
+    @IBAction func signUpButtonTouched() {
+        let email = emailTextField.text
+        let password = passwordTextField.text
+        
+        disableInteractions()
+        
+        viewModel.registerUser(email: email, password: password)
     }
 }
 
@@ -61,11 +74,10 @@ extension LoginViewController {
     private func disableInteractions() {
         view.isUserInteractionEnabled = false
     }
-    
 }
 
-// MARK: - AuthServiceDelegate
-extension LoginViewController: AuthServiceDelegate {
+// MARK: - LoginViewDelegate
+extension LoginViewController: LoginViewDelegate {
     
     func authService(didAuthenticate user: User) {
         presentHome()
