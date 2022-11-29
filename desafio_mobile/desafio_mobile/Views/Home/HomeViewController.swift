@@ -15,19 +15,25 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var mapView: MKMapView!
     
-    private lazy var locationManager: CLLocationManager = {
-        let locationManager = CLLocationManager()
-        locationManager.distanceFilter = 10
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        return locationManager
-    }()
+    private let viewModel: HomeViewModel
     
-    // MARK: - Lifecycle
+    // MARK: - Init
+    init(viewModel: HomeViewModel = HomeViewModel()) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Lifecycle screen
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
+        viewModel.delegate = self
+        viewModel.requestLocation()
     }
 }
 
@@ -47,59 +53,14 @@ extension HomeViewController {
     }
 }
 
-// MARK: - LocationManagerDelegate
-extension HomeViewController: CLLocationManagerDelegate {
+// MARK: - HomeViewDelegate
+extension HomeViewController: HomeViewDelegate {
     
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        switch locationManager.authorizationStatus {
-        case .authorizedWhenInUse, .authorizedAlways:
-            Analytics.logEvent("permission_location", parameters: [
-                "granted": true,
-                "authorization_status": locationManager.authorizationStatus.rawValue
-            ])
-            
-            locationManager.startUpdatingLocation()
-        case .restricted, .denied:
-            Analytics.logEvent("permission_location", parameters: [
-                "granted": false,
-                "authorization_status": locationManager.authorizationStatus.rawValue
-            ])
-            
-            presentAlert(withMessage: "To use the app we need your location.")
-            break
-        case .notDetermined:
-            Analytics.logEvent("request_permission_location", parameters: nil)
-            
-            locationManager.requestWhenInUseAuthorization()
-        @unknown default:
-            fatalError()
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else { return }
-        
-        let latitude = location.coordinate.latitude.description
-        let longitude = location.coordinate.longitude.description
-        
-        Analytics.logEvent("location", parameters: [
-            "latitude": latitude,
-            "longitude": longitude
-        ])
-        
-        if let user = AuthService.shared.getCurrentUser() {
-            FirestoreService.shared.updateUserLocation(userUid: user.uid, latitude: latitude, longitude: longitude)
-            CoredataService.shared.updateUserLocation(userUid: user.uid, latitude: latitude, longitude: longitude)
-        }
-        
+    func locationService(didUpdateLocation location: CLLocation) {
         updateMap(location)
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        if let error = error as? CLError, error.code == .locationUnknown {
-            return
-        }
-        
+    func locationService(didFailToUpdateLocationWith error: Error) {
         presentAlert(withError: error)
     }
 }

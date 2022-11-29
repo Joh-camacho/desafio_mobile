@@ -12,6 +12,7 @@
 		B20145F82935BA71002BB6B0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20145F72935BA71002BB6B0 /* LoginViewModel.swift */; };
 		B20145FB2935C2A1002BB6B0 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20145FA2935C2A1002BB6B0 /* UIViewController+Extensions.swift */; };
 		B2014600293675B8002BB6B0 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20145FF293675B8002BB6B0 /* PersistenceService.swift */; };
+		B201460229368390002BB6B0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201460129368390002BB6B0 /* HomeViewModel.swift */; };
 		B2BC60912935756E000BFE47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60902935756E000BFE47 /* AppDelegate.swift */; };
 		B2BC60932935756E000BFE47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60922935756E000BFE47 /* SceneDelegate.swift */; };
 		B2BC609B2935756E000BFE47 /* desafio_mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60992935756E000BFE47 /* desafio_mobile.xcdatamodeld */; };
@@ -54,6 +55,7 @@
 		B20145F72935BA71002BB6B0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B20145FA2935C2A1002BB6B0 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B20145FF293675B8002BB6B0 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		B201460129368390002BB6B0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B2BC608D2935756E000BFE47 /* desafio_mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafio_mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BC60902935756E000BFE47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2BC60922935756E000BFE47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				B2DD4B7829358FF70076978B /* HomeViewController.swift */,
+				B201460129368390002BB6B0 /* HomeViewModel.swift */,
 				B2DD4B7929358FF70076978B /* HomeView.xib */,
 			);
 			path = Home;
@@ -392,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2DD4B7A29358FF70076978B /* HomeViewController.swift in Sources */,
+				B201460229368390002BB6B0 /* HomeViewModel.swift in Sources */,
 				B2BC609B2935756E000BFE47 /* desafio_mobile.xcdatamodeld in Sources */,
 				B2BC60912935756E000BFE47 /* AppDelegate.swift in Sources */,
 				B2014600293675B8002BB6B0 /* PersistenceService.swift in Sources */,
