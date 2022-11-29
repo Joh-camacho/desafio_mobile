@@ -87,7 +87,18 @@ struct CoredataService: PersistenceProtocol {
         }
     }
     
-    func saveContext() {
+    func hasUser(userUid uid: String) -> Bool {
+        do {
+            let fetch = CDUser.fetchRequest()
+            let users = try container.viewContext.fetch(fetch)
+            
+            return users.first(where: { $0.id == uid }) != nil
+        } catch {
+            fatalError("CoreData error on fetchRequest.")
+        }
+    }
+    
+    private func saveContext() {
         let context = container.viewContext
         
         if context.hasChanges {

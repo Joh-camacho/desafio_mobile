@@ -40,6 +40,10 @@ class LoginViewModel {
                 case .success(let user):
                     Analytics.logEvent(AnalyticsEventLogin, parameters: [AnalyticsParameterSuccess: true])
                     
+                    if !CoredataService.shared.hasUser(userUid: user.uid) {
+                        CoredataService.shared.createUser(email: email, userUid: user.uid)
+                    }
+                    
                     self.delegate?.authService(didAuthenticate: user)
                 case .failure(let error):
                     Analytics.logEvent(AnalyticsEventLogin, parameters: [

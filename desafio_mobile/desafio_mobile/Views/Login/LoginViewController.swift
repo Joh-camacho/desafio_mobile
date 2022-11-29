@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     
     private let viewModel: LoginViewModel
     
-    // MARK: - Lifecycle
+    // MARK: - Init
     init(viewModel: LoginViewModel = LoginViewModel()) {
         self.viewModel = viewModel
         
