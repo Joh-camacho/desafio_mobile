@@ -37,6 +37,7 @@
 		B2E070EE2936B3AC0006EB06 /* AuthValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070ED2936B3AC0006EB06 /* AuthValidationTests.swift */; };
 		B2E070F02936B8940006EB06 /* AuthServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070EF2936B8940006EB06 /* AuthServiceTests.swift */; };
 		B2E070F22936D2510006EB06 /* Auth+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070F12936D2510006EB06 /* Auth+Extension.swift */; };
+		B2E070F62936D5650006EB06 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070F52936D5650006EB06 /* LoginViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		B2E070ED2936B3AC0006EB06 /* AuthValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidationTests.swift; sourceTree = "<group>"; };
 		B2E070EF2936B8940006EB06 /* AuthServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceTests.swift; sourceTree = "<group>"; };
 		B2E070F12936D2510006EB06 /* Auth+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auth+Extension.swift"; sourceTree = "<group>"; };
+		B2E070F52936D5650006EB06 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				B2BC60AA29357570000BFE47 /* desafio_mobileTests.swift */,
 				B2E070ED2936B3AC0006EB06 /* AuthValidationTests.swift */,
 				B2E070EF2936B8940006EB06 /* AuthServiceTests.swift */,
+				B2E070F52936D5650006EB06 /* LoginViewModelTests.swift */,
 			);
 			path = desafio_mobileTests;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E070F62936D5650006EB06 /* LoginViewModelTests.swift in Sources */,
 				B2BC60AB29357570000BFE47 /* desafio_mobileTests.swift in Sources */,
 				B2E070EE2936B3AC0006EB06 /* AuthValidationTests.swift in Sources */,
 				B2E070F02936B8940006EB06 /* AuthServiceTests.swift in Sources */,
