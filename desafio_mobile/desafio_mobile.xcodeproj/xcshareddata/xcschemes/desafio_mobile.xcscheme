@@ -40,17 +40,6 @@
                ReferencedContainer = "container:desafio_mobile.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B2BC60AF29357570000BFE47"
-               BuildableName = "desafio_mobileUITests.xctest"
-               BlueprintName = "desafio_mobileUITests"
-               ReferencedContainer = "container:desafio_mobile.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -74,6 +63,10 @@
             ReferencedContainer = "container:desafio_mobile.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <LocationScenarioReference
+         identifier = "Rio de Janeiro, Brazil"
+         referenceType = "1">
+      </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
