@@ -39,6 +39,8 @@ class HomeViewModel: NSObject {
             
             switch response {
             case .success(let data):
+                guard data.lastLatitude != 0.0 && data.lastLongitute != 0.0 else { return }
+                
                 let location = CLLocation(latitude: data.lastLatitude, longitude: data.lastLongitute)
                 
                 self.delegate?.locationService(didUpdateLocation: location)
