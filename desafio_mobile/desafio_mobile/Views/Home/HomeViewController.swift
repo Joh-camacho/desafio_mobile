@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
     
@@ -42,8 +43,29 @@ class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - IBActions
+extension HomeViewController {
+    
+    @IBAction func logoutButtonTouched() {
+        do {
+            try Auth.auth().signOut()
+            
+            presentLogin()
+        } catch {
+            presentAlert(withError: error)
+        }
+    }
+}
+
 // MARK: - Private functions
 extension HomeViewController {
+    
+    private func presentLogin() {
+        let loginVC = LoginViewController()
+        loginVC.modalPresentationStyle = .fullScreen
+        
+        present(loginVC, animated: true)
+    }
     
     private func updateMap(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
