@@ -23,7 +23,11 @@ final class AuthServiceTests: XCTestCase {
         }
         
         func createUser(with email: String, password: String, completion: completionHandler) {
-            completion?(nil, nil)
+            if let triggerError = triggerError {
+                completion?(nil, triggerError)
+            } else {
+                completion?(nil, nil)
+            }
         }
     }
     
@@ -44,7 +48,7 @@ final class AuthServiceTests: XCTestCase {
         try super.tearDownWithError()
     }
     
-    func testNotReturnData() {
+    func testLoginNotReturnData() {
         let expectation = expectation(description: "Returning mocked data nil")
         let email = "test@test.com"
         let password = "12345678"
@@ -65,7 +69,7 @@ final class AuthServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 5)
     }
     
-    func testEmailInvalid() {
+    func testLoginEmailInvalid() {
         let expectation = expectation(description: "Returning trigger a error")
         let email = "testtest.com"
         let password = "12345678"
@@ -74,6 +78,50 @@ final class AuthServiceTests: XCTestCase {
         mock.triggerError = expectedError
         
         sut.loginUser(email: email, password: password) { result in
+            switch result {
+            case .success:
+                XCTFail("This was not supposed to happen.")
+            case .failure(let error):
+                XCTAssertNotNil(error)
+                XCTAssertEqual(expectedError, error as? AuthErrorCode)
+                
+                expectation.fulfill()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 5)
+    }
+    
+    func testRegisterNotReturnData() {
+        let expectation = expectation(description: "Returning mocked data nil")
+        let email = "test@test.com"
+        let password = "12345678"
+        let expectedError = AuthErrorCode(.internalError)
+        
+        sut.registerUser(email: email, password: password) { result in
+            switch result {
+            case .success:
+                XCTFail("This was not supposed to happen.")
+            case .failure(let error):
+                XCTAssertNotNil(error)
+                XCTAssertEqual(expectedError, error as? AuthErrorCode)
+                
+                expectation.fulfill()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 5)
+    }
+    
+    func testRegisterEmailInvalid() {
+        let expectation = expectation(description: "Returning trigger a error")
+        let email = "testtest.com"
+        let password = "12345678"
+        let expectedError = AuthErrorCode(.invalidEmail)
+        
+        mock.triggerError = expectedError
+        
+        sut.registerUser(email: email, password: password) { result in
             switch result {
             case .success:
                 XCTFail("This was not supposed to happen.")
