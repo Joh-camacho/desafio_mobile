@@ -8,7 +8,6 @@
 import UIKit
 import MapKit
 import CoreLocation
-import FirebaseAnalytics
 
 class HomeViewController: UIViewController {
     
@@ -67,6 +66,11 @@ extension HomeViewController: HomeViewDelegate {
     }
     
     func locationService(didFailToUpdateLocationWith error: Error) {
-        presentAlert(withError: error)
+        guard let error = error as? CLError, error.code == .denied else {
+            presentAlert(withError: error)
+            return
+        }
+        
+        presentAlert(withMessage: "To use the app we need your location.")
     }
 }

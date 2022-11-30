@@ -11,8 +11,11 @@ import CoreData
 
 protocol PersistenceProtocol {
     
+    typealias completionHandler = (Result<DMUser, Error>) -> Void
+    
     func createUser(email: String, userUid uid: String)
     func updateUserLocation(userUid uid: String, latitude: Double, longitude: Double)
+    func getUserInfo(userUid uid: String, completion: @escaping completionHandler)
     
 }
 
@@ -42,7 +45,7 @@ struct FirestoreService: PersistenceProtocol {
         ])
     }
     
-    func getUserInfo(userUid uid: String, completion: @escaping (Result<DocumentSnapshot, Error>) -> Void) {
+    func getUserInfo(userUid uid: String, completion: @escaping completionHandler) {
         let document = db.collection(collection).document(uid)
         
         document.getDocument { document, error in
@@ -56,8 +59,18 @@ struct FirestoreService: PersistenceProtocol {
                 return
             }
             
-            completion(.success(document))
+            let dmUser = parseUser(userUid: uid, document: document)
+            
+            completion(.success(dmUser))
         }
+    }
+    
+    private func parseUser(userUid uid: String, document: DocumentSnapshot) -> DMUser {
+        let email = document["email"] as? String ?? ""
+        let lastLatitude = document["last_latitude"] as? Double ?? 0.0
+        let lastLongitude = document["last_longitude"] as? Double ?? 0.0
+        
+        return DMUser(uid: uid, email: email, lastLatitude: lastLatitude, lastLongitute: lastLongitude)
     }
 }
 
@@ -105,15 +118,30 @@ struct CoredataService: PersistenceProtocol {
         }
     }
     
-    func hasUser(userUid uid: String) -> Bool {
+    func getUserInfo(userUid uid: String, completion: @escaping (Result<DMUser, Error>) -> Void) {
+        guard let user = getUser(userUid: uid) else {
+            completion(.failure(FirestoreErrorCode(.notFound)))
+            return
+        }
+        
+        let dmUser = parseUser(userUid: uid, cdUser: user)
+        
+        completion(.success(dmUser))
+    }
+    
+    func getUser(userUid uid: String) -> CDUser? {
         do {
             let fetch = CDUser.fetchRequest()
             let users = try container.viewContext.fetch(fetch)
             
-            return users.first(where: { $0.id == uid }) != nil
+            return users.first(where: { $0.id == uid })
         } catch {
             fatalError("CoreData error on fetchRequest.")
         }
+    }
+    
+    func hasUser(userUid uid: String) -> Bool {
+        return getUser(userUid: uid) != nil
     }
     
     private func saveContext() {
@@ -127,5 +155,13 @@ struct CoredataService: PersistenceProtocol {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    private func parseUser(userUid uid: String, cdUser: CDUser) -> DMUser {
+        let email = cdUser.email ?? ""
+        let lastLatitude = cdUser.last_latitude
+        let lastLongitude = cdUser.last_longitude
+        
+        return DMUser(uid: uid, email: email, lastLatitude: lastLatitude, lastLongitute: lastLongitude)
     }
 }

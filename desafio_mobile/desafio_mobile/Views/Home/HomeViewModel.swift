@@ -18,32 +18,28 @@ protocol HomeViewDelegate: AnyObject {
 
 class HomeViewModel: NSObject {
     
-    private lazy var locationManager: CLLocationManager = {
-        let locationManager = CLLocationManager()
-        locationManager.distanceFilter = 10
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        return locationManager
-    }()
+    private let persistenceService: PersistenceProtocol
+    private var locationManager: CLLocationManager
     
     weak var delegate: HomeViewDelegate?
+    
+    init(
+        persistenceService: PersistenceProtocol = FirestoreService.shared,
+        locationManager: CLLocationManager = CLLocationManager()
+    ) {
+        self.persistenceService = persistenceService
+        self.locationManager = locationManager
+    }
     
     func loadLastLocation() {
         guard let user = AuthService.getCurrentUser() else { return }
         
-        FirestoreService.shared.getUserInfo(userUid: user.uid) { [weak self] response in
+        persistenceService.getUserInfo(userUid: user.uid) { [weak self] response in
             guard let self = self else { return }
             
             switch response {
             case .success(let data):
-                let lastLatitude = data["last_latitude"] as? Double
-                let lastLongitude = data["last_longitude"] as? Double
-                
-                guard let lastLatitude = lastLatitude, let lastLongitude = lastLongitude else {
-                    return
-                }
-                
-                let location = CLLocation(latitude: lastLatitude, longitude: lastLongitude)
+                let location = CLLocation(latitude: data.lastLatitude, longitude: data.lastLongitute)
                 
                 self.delegate?.locationService(didUpdateLocation: location)
             case .failure(let error):
@@ -54,6 +50,14 @@ class HomeViewModel: NSObject {
     
     func requestCurrentLocation() {
         locationManager.delegate = self
+        locationManager.distanceFilter = 10
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        if locationManager.authorizationStatus == .authorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
     }
 }
 

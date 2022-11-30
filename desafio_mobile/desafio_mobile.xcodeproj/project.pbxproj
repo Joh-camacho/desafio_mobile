@@ -38,6 +38,8 @@
 		B2E070F02936B8940006EB06 /* AuthServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070EF2936B8940006EB06 /* AuthServiceTests.swift */; };
 		B2E070F22936D2510006EB06 /* Auth+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070F12936D2510006EB06 /* Auth+Extension.swift */; };
 		B2E070F62936D5650006EB06 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070F52936D5650006EB06 /* LoginViewModelTests.swift */; };
+		B2E070F82936EC2E0006EB06 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070F72936EC2E0006EB06 /* HomeViewModelTests.swift */; };
+		B2E070FA2936EF9C0006EB06 /* DMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070F92936EF9C0006EB06 /* DMUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		B2E070EF2936B8940006EB06 /* AuthServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceTests.swift; sourceTree = "<group>"; };
 		B2E070F12936D2510006EB06 /* Auth+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auth+Extension.swift"; sourceTree = "<group>"; };
 		B2E070F52936D5650006EB06 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		B2E070F72936EC2E0006EB06 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		B2E070F92936EF9C0006EB06 /* DMUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,7 @@
 				B2E070ED2936B3AC0006EB06 /* AuthValidationTests.swift */,
 				B2E070EF2936B8940006EB06 /* AuthServiceTests.swift */,
 				B2E070F52936D5650006EB06 /* LoginViewModelTests.swift */,
+				B2E070F72936EC2E0006EB06 /* HomeViewModelTests.swift */,
 			);
 			path = desafio_mobileTests;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				B2BC60992935756E000BFE47 /* desafio_mobile.xcdatamodeld */,
+				B2E070F92936EF9C0006EB06 /* DMUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -434,6 +440,7 @@
 				B2BC609B2935756E000BFE47 /* desafio_mobile.xcdatamodeld in Sources */,
 				B2BC60912935756E000BFE47 /* AppDelegate.swift in Sources */,
 				B2014600293675B8002BB6B0 /* PersistenceService.swift in Sources */,
+				B2E070FA2936EF9C0006EB06 /* DMUser.swift in Sources */,
 				B20145F62935B64B002BB6B0 /* AuthValidation.swift in Sources */,
 				B20145FB2935C2A1002BB6B0 /* UIViewController+Extension.swift in Sources */,
 				B20145F82935BA71002BB6B0 /* LoginViewModel.swift in Sources */,
@@ -447,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E070F82936EC2E0006EB06 /* HomeViewModelTests.swift in Sources */,
 				B2E070F62936D5650006EB06 /* LoginViewModelTests.swift in Sources */,
 				B2BC60AB29357570000BFE47 /* desafio_mobileTests.swift in Sources */,
 				B2E070EE2936B3AC0006EB06 /* AuthValidationTests.swift in Sources */,
