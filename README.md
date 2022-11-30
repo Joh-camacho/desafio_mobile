@@ -31,3 +31,29 @@ Seu projeto será avaliado de acordo com os seguintes critérios.
 4. Qualidade e cobertura dos testes unitários.
 
 Adicionalmente, tentaremos verificar a sua familiarização com as bibliotecas padrões (standard libs), bem como sua experiência com programação orientada a objetos a partir da estrutura de seu projeto.
+
+# Documentação
+
+Projeto implementado em Swift utilizando o padrão arquitetural MVVM.
+
+### Onboarding
+
+Ao rodar o App pela primeira vez, a tela de login irá aparecer onde você pode logar com sua conta. Se não possuir uma conta, você pode preencher o formulário com um e-mail e senha, ou utilizar uma conta padrão:
+
+> E-mail: bycoders@test.com
+>
+> Senha: 12345678
+
+Ao logar, você será redirecionado a tela Home com a sua localização atual.
+
+### Frameworks
+
+Para o desenvolvimento desse projeto foi utilizado o Swift Packager Manager para realizar o gerenciamento das seguintes bibliotecas:
+- Firebase Core
+- Firebase Storage
+- Firebase Analytics
+- Firebase Crashlytics
+- Firebase Authentication
+
+
+Linkedin - https://www.linkedin.com/in/johnny-camacho/

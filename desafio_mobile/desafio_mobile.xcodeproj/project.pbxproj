@@ -1,0 +1,733 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B20145F12935AFEC002BB6B0 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20145F02935AFEC002BB6B0 /* AuthService.swift */; };
+		B20145F62935B64B002BB6B0 /* AuthValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20145F52935B64B002BB6B0 /* AuthValidation.swift */; };
+		B20145F82935BA71002BB6B0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20145F72935BA71002BB6B0 /* LoginViewModel.swift */; };
+		B20145FB2935C2A1002BB6B0 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20145FA2935C2A1002BB6B0 /* UIViewController+Extension.swift */; };
+		B2014600293675B8002BB6B0 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20145FF293675B8002BB6B0 /* PersistenceService.swift */; };
+		B201460229368390002BB6B0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B201460129368390002BB6B0 /* HomeViewModel.swift */; };
+		B2BC60912935756E000BFE47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60902935756E000BFE47 /* AppDelegate.swift */; };
+		B2BC60932935756E000BFE47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60922935756E000BFE47 /* SceneDelegate.swift */; };
+		B2BC609B2935756E000BFE47 /* desafio_mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2BC60992935756E000BFE47 /* desafio_mobile.xcdatamodeld */; };
+		B2BC609D2935756F000BFE47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2BC609C2935756F000BFE47 /* Assets.xcassets */; };
+		B2BC60A02935756F000BFE47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BC609E2935756F000BFE47 /* LaunchScreen.storyboard */; };
+		B2BC60C4293576DD000BFE47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2BC60C3293576DC000BFE47 /* GoogleService-Info.plist */; };
+		B2BC60C729357E12000BFE47 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B2BC60C629357E12000BFE47 /* FirebaseAnalytics */; };
+		B2BC60C929357E12000BFE47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B2BC60C829357E12000BFE47 /* FirebaseAuth */; };
+		B2BC60CB29357E12000BFE47 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B2BC60CA29357E12000BFE47 /* FirebaseCrashlytics */; };
+		B2BC60CD29357E12000BFE47 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B2BC60CC29357E12000BFE47 /* FirebaseFirestore */; };
+		B2DD4B7A29358FF70076978B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DD4B7829358FF70076978B /* HomeViewController.swift */; };
+		B2DD4B7B29358FF70076978B /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2DD4B7929358FF70076978B /* HomeView.xib */; };
+		B2DD4B7E293591560076978B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DD4B7D293591560076978B /* LoginViewController.swift */; };
+		B2DD4B80293591640076978B /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2DD4B7F293591640076978B /* LoginView.xib */; };
+		B2E070E62936B2B40006EB06 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B2E070E52936B2B40006EB06 /* FirebaseAnalytics */; };
+		B2E070E82936B2B40006EB06 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B2E070E72936B2B40006EB06 /* FirebaseAuth */; };
+		B2E070EA2936B2B40006EB06 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B2E070E92936B2B40006EB06 /* FirebaseCrashlytics */; };
+		B2E070EC2936B2B40006EB06 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B2E070EB2936B2B40006EB06 /* FirebaseFirestore */; };
+		B2E070EE2936B3AC0006EB06 /* AuthValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070ED2936B3AC0006EB06 /* AuthValidationTests.swift */; };
+		B2E070F02936B8940006EB06 /* AuthServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070EF2936B8940006EB06 /* AuthServiceTests.swift */; };
+		B2E070F22936D2510006EB06 /* Auth+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070F12936D2510006EB06 /* Auth+Extension.swift */; };
+		B2E070F62936D5650006EB06 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070F52936D5650006EB06 /* LoginViewModelTests.swift */; };
+		B2E070F82936EC2E0006EB06 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070F72936EC2E0006EB06 /* HomeViewModelTests.swift */; };
+		B2E070FA2936EF9C0006EB06 /* DMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E070F92936EF9C0006EB06 /* DMUser.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B2BC60A729357570000BFE47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2BC60852935756E000BFE47 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2BC608C2935756E000BFE47;
+			remoteInfo = desafio_mobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B20145F02935AFEC002BB6B0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		B20145F52935B64B002BB6B0 /* AuthValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidation.swift; sourceTree = "<group>"; };
+		B20145F72935BA71002BB6B0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		B20145FA2935C2A1002BB6B0 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		B20145FF293675B8002BB6B0 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		B201460129368390002BB6B0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B2BC608D2935756E000BFE47 /* desafio_mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafio_mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2BC60902935756E000BFE47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B2BC60922935756E000BFE47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B2BC609A2935756E000BFE47 /* desafio_mobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = desafio_mobile.xcdatamodel; sourceTree = "<group>"; };
+		B2BC609C2935756F000BFE47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B2BC609F2935756F000BFE47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B2BC60A12935756F000BFE47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2BC60A629357570000BFE47 /* desafio_mobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desafio_mobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2BC60C3293576DC000BFE47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B2DD4B7829358FF70076978B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B2DD4B7929358FF70076978B /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		B2DD4B7D293591560076978B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B2DD4B7F293591640076978B /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		B2E070ED2936B3AC0006EB06 /* AuthValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidationTests.swift; sourceTree = "<group>"; };
+		B2E070EF2936B8940006EB06 /* AuthServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceTests.swift; sourceTree = "<group>"; };
+		B2E070F12936D2510006EB06 /* Auth+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auth+Extension.swift"; sourceTree = "<group>"; };
+		B2E070F52936D5650006EB06 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		B2E070F72936EC2E0006EB06 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		B2E070F92936EF9C0006EB06 /* DMUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMUser.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2BC608A2935756E000BFE47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2BC60CB29357E12000BFE47 /* FirebaseCrashlytics in Frameworks */,
+				B2BC60CD29357E12000BFE47 /* FirebaseFirestore in Frameworks */,
+				B2BC60C729357E12000BFE47 /* FirebaseAnalytics in Frameworks */,
+				B2BC60C929357E12000BFE47 /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2BC60A329357570000BFE47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E070EA2936B2B40006EB06 /* FirebaseCrashlytics in Frameworks */,
+				B2E070EC2936B2B40006EB06 /* FirebaseFirestore in Frameworks */,
+				B2E070E62936B2B40006EB06 /* FirebaseAnalytics in Frameworks */,
+				B2E070E82936B2B40006EB06 /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B20145F92935C266002BB6B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B20145FA2935C2A1002BB6B0 /* UIViewController+Extension.swift */,
+				B2E070F12936D2510006EB06 /* Auth+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B2BC60842935756E000BFE47 = {
+			isa = PBXGroup;
+			children = (
+				B2BC608F2935756E000BFE47 /* desafio_mobile */,
+				B2BC60A929357570000BFE47 /* desafio_mobileTests */,
+				B2BC608E2935756E000BFE47 /* Products */,
+				B2E070E42936B2B40006EB06 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B2BC608E2935756E000BFE47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2BC608D2935756E000BFE47 /* desafio_mobile.app */,
+				B2BC60A629357570000BFE47 /* desafio_mobileTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2BC608F2935756E000BFE47 /* desafio_mobile */ = {
+			isa = PBXGroup;
+			children = (
+				B20145F92935C266002BB6B0 /* Extensions */,
+				B2BC60CE29358170000BFE47 /* Core */,
+				B2BC60CF29358183000BFE47 /* Views */,
+				B2BC60D029358196000BFE47 /* Models */,
+				B2BC60D22935831B000BFE47 /* Services */,
+				B2BC60D1293581A5000BFE47 /* Resources */,
+			);
+			path = desafio_mobile;
+			sourceTree = "<group>";
+		};
+		B2BC60A929357570000BFE47 /* desafio_mobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2E070ED2936B3AC0006EB06 /* AuthValidationTests.swift */,
+				B2E070EF2936B8940006EB06 /* AuthServiceTests.swift */,
+				B2E070F52936D5650006EB06 /* LoginViewModelTests.swift */,
+				B2E070F72936EC2E0006EB06 /* HomeViewModelTests.swift */,
+			);
+			path = desafio_mobileTests;
+			sourceTree = "<group>";
+		};
+		B2BC60CE29358170000BFE47 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B2BC60902935756E000BFE47 /* AppDelegate.swift */,
+				B2BC60922935756E000BFE47 /* SceneDelegate.swift */,
+				B2BC60A12935756F000BFE47 /* Info.plist */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B2BC60CF29358183000BFE47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B2DD4B7729358FAA0076978B /* Home */,
+				B2DD4B7C293591480076978B /* Login */,
+				B2BC609E2935756F000BFE47 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B2BC60D029358196000BFE47 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B2BC60992935756E000BFE47 /* desafio_mobile.xcdatamodeld */,
+				B2E070F92936EF9C0006EB06 /* DMUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B2BC60D1293581A5000BFE47 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B2BC609C2935756F000BFE47 /* Assets.xcassets */,
+				B2BC60C3293576DC000BFE47 /* GoogleService-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B2BC60D22935831B000BFE47 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B20145F02935AFEC002BB6B0 /* AuthService.swift */,
+				B20145F52935B64B002BB6B0 /* AuthValidation.swift */,
+				B20145FF293675B8002BB6B0 /* PersistenceService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B2DD4B7729358FAA0076978B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B2DD4B7829358FF70076978B /* HomeViewController.swift */,
+				B201460129368390002BB6B0 /* HomeViewModel.swift */,
+				B2DD4B7929358FF70076978B /* HomeView.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B2DD4B7C293591480076978B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B2DD4B7D293591560076978B /* LoginViewController.swift */,
+				B20145F72935BA71002BB6B0 /* LoginViewModel.swift */,
+				B2DD4B7F293591640076978B /* LoginView.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B2E070E42936B2B40006EB06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2BC608C2935756E000BFE47 /* desafio_mobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2BC60BA29357570000BFE47 /* Build configuration list for PBXNativeTarget "desafio_mobile" */;
+			buildPhases = (
+				B2BC60892935756E000BFE47 /* Sources */,
+				B2BC608A2935756E000BFE47 /* Frameworks */,
+				B2BC608B2935756E000BFE47 /* Resources */,
+				B20145FC2935E356002BB6B0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = desafio_mobile;
+			packageProductDependencies = (
+				B2BC60C629357E12000BFE47 /* FirebaseAnalytics */,
+				B2BC60C829357E12000BFE47 /* FirebaseAuth */,
+				B2BC60CA29357E12000BFE47 /* FirebaseCrashlytics */,
+				B2BC60CC29357E12000BFE47 /* FirebaseFirestore */,
+			);
+			productName = desafio_mobile;
+			productReference = B2BC608D2935756E000BFE47 /* desafio_mobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B2BC60A529357570000BFE47 /* desafio_mobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2BC60BD29357570000BFE47 /* Build configuration list for PBXNativeTarget "desafio_mobileTests" */;
+			buildPhases = (
+				B2BC60A229357570000BFE47 /* Sources */,
+				B2BC60A329357570000BFE47 /* Frameworks */,
+				B2BC60A429357570000BFE47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2BC60A829357570000BFE47 /* PBXTargetDependency */,
+			);
+			name = desafio_mobileTests;
+			packageProductDependencies = (
+				B2E070E52936B2B40006EB06 /* FirebaseAnalytics */,
+				B2E070E72936B2B40006EB06 /* FirebaseAuth */,
+				B2E070E92936B2B40006EB06 /* FirebaseCrashlytics */,
+				B2E070EB2936B2B40006EB06 /* FirebaseFirestore */,
+			);
+			productName = desafio_mobileTests;
+			productReference = B2BC60A629357570000BFE47 /* desafio_mobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2BC60852935756E000BFE47 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					B2BC608C2935756E000BFE47 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					B2BC60A529357570000BFE47 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = B2BC608C2935756E000BFE47;
+					};
+				};
+			};
+			buildConfigurationList = B2BC60882935756E000BFE47 /* Build configuration list for PBXProject "desafio_mobile" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B2BC60842935756E000BFE47;
+			packageReferences = (
+				B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = B2BC608E2935756E000BFE47 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2BC608C2935756E000BFE47 /* desafio_mobile */,
+				B2BC60A529357570000BFE47 /* desafio_mobileTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2BC608B2935756E000BFE47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2BC60A02935756F000BFE47 /* LaunchScreen.storyboard in Resources */,
+				B2BC60C4293576DD000BFE47 /* GoogleService-Info.plist in Resources */,
+				B2DD4B7B29358FF70076978B /* HomeView.xib in Resources */,
+				B2DD4B80293591640076978B /* LoginView.xib in Resources */,
+				B2BC609D2935756F000BFE47 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2BC60A429357570000BFE47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B20145FC2935E356002BB6B0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2BC60892935756E000BFE47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2DD4B7A29358FF70076978B /* HomeViewController.swift in Sources */,
+				B2E070F22936D2510006EB06 /* Auth+Extension.swift in Sources */,
+				B201460229368390002BB6B0 /* HomeViewModel.swift in Sources */,
+				B2BC609B2935756E000BFE47 /* desafio_mobile.xcdatamodeld in Sources */,
+				B2BC60912935756E000BFE47 /* AppDelegate.swift in Sources */,
+				B2014600293675B8002BB6B0 /* PersistenceService.swift in Sources */,
+				B2E070FA2936EF9C0006EB06 /* DMUser.swift in Sources */,
+				B20145F62935B64B002BB6B0 /* AuthValidation.swift in Sources */,
+				B20145FB2935C2A1002BB6B0 /* UIViewController+Extension.swift in Sources */,
+				B20145F82935BA71002BB6B0 /* LoginViewModel.swift in Sources */,
+				B20145F12935AFEC002BB6B0 /* AuthService.swift in Sources */,
+				B2DD4B7E293591560076978B /* LoginViewController.swift in Sources */,
+				B2BC60932935756E000BFE47 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2BC60A229357570000BFE47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E070F82936EC2E0006EB06 /* HomeViewModelTests.swift in Sources */,
+				B2E070F62936D5650006EB06 /* LoginViewModelTests.swift in Sources */,
+				B2E070EE2936B3AC0006EB06 /* AuthValidationTests.swift in Sources */,
+				B2E070F02936B8940006EB06 /* AuthServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2BC60A829357570000BFE47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2BC608C2935756E000BFE47 /* desafio_mobile */;
+			targetProxy = B2BC60A729357570000BFE47 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B2BC609E2935756F000BFE47 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2BC609F2935756F000BFE47 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B2BC60B829357570000BFE47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B2BC60B929357570000BFE47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B2BC60BB29357570000BFE47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6D5984MR54;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = desafio_mobile/Core/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Geolocation is needed to show your location on the map.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joh-camacho.desafio-mobile";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B2BC60BC29357570000BFE47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6D5984MR54;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = desafio_mobile/Core/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Geolocation is needed to show your location on the map.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joh-camacho.desafio-mobile";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B2BC60BE29357570000BFE47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6D5984MR54;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joh-camacho.desafio-mobileTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/desafio_mobile.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/desafio_mobile";
+			};
+			name = Debug;
+		};
+		B2BC60BF29357570000BFE47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6D5984MR54;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joh-camacho.desafio-mobileTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/desafio_mobile.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/desafio_mobile";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2BC60882935756E000BFE47 /* Build configuration list for PBXProject "desafio_mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2BC60B829357570000BFE47 /* Debug */,
+				B2BC60B929357570000BFE47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2BC60BA29357570000BFE47 /* Build configuration list for PBXNativeTarget "desafio_mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2BC60BB29357570000BFE47 /* Debug */,
+				B2BC60BC29357570000BFE47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2BC60BD29357570000BFE47 /* Build configuration list for PBXNativeTarget "desafio_mobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2BC60BE29357570000BFE47 /* Debug */,
+				B2BC60BF29357570000BFE47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2BC60C629357E12000BFE47 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		B2BC60C829357E12000BFE47 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		B2BC60CA29357E12000BFE47 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		B2BC60CC29357E12000BFE47 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		B2E070E52936B2B40006EB06 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		B2E070E72936B2B40006EB06 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		B2E070E92936B2B40006EB06 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		B2E070EB2936B2B40006EB06 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2BC60C529357E12000BFE47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		B2BC60992935756E000BFE47 /* desafio_mobile.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B2BC609A2935756E000BFE47 /* desafio_mobile.xcdatamodel */,
+			);
+			currentVersion = B2BC609A2935756E000BFE47 /* desafio_mobile.xcdatamodel */;
+			path = desafio_mobile.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B2BC60852935756E000BFE47 /* Project object */;
+}
