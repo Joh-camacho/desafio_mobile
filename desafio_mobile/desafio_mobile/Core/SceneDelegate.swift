@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         var viewController: UIViewController
         
-        if let _ = AuthService.shared.getCurrentUser() {
+        if let _ = AuthService.getCurrentUser() {
             viewController = HomeViewController()
         } else {
             viewController = LoginViewController()

@@ -7,16 +7,34 @@
 
 import FirebaseAuth
 
-struct AuthService {
+protocol AuthRequest {
+    
+    typealias completionHandler = ((AuthDataResult?, Error?) -> Void)?
+    
+    func signIn(with email: String, password: String, completion: completionHandler)
+    func createUser(with email: String, password: String, completion: completionHandler)
+    
+}
+
+protocol AuthServiceProtocol {
     
     typealias completionHandler = (Result<User, Error>) -> Void
     
-    static let shared = AuthService()
+    func loginUser(email: String, password: String, completion: @escaping completionHandler)
+    func registerUser(email: String, password: String, completion: @escaping completionHandler)
     
-    private init() { }
+}
+
+struct AuthService: AuthServiceProtocol {
+    
+    private let authRequest: AuthRequest
+    
+    init(authRequest: AuthRequest = Auth.auth()) {
+        self.authRequest = authRequest
+    }
     
     func loginUser(email: String, password: String, completion: @escaping completionHandler) {
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+        authRequest.signIn(with: email, password: password) { result, error in
             if let error = error {
                 completion(.failure(error))
                 return
@@ -32,7 +50,7 @@ struct AuthService {
     }
     
     func registerUser(email: String, password: String, completion: @escaping completionHandler) {
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+        authRequest.createUser(with: email, password: password) { result, error in
             if let error = error {
                 completion(.failure(error))
                 return
@@ -47,7 +65,7 @@ struct AuthService {
         }
     }
     
-    func getCurrentUser() -> User? {
+    static func getCurrentUser() -> User? {
         return Auth.auth().currentUser
     }
 }

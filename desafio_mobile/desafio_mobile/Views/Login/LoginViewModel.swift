@@ -19,13 +19,16 @@ protocol LoginViewDelegate: AnyObject {
 class LoginViewModel {
     
     private let authValidation: AuthValidation
+    private let authService: AuthServiceProtocol
     
     weak var delegate: LoginViewDelegate?
     
     init(
-        authValidation: AuthValidation = AuthValidation()
+        authValidation: AuthValidation = AuthValidation(),
+        authService: AuthServiceProtocol = AuthService()
     ) {
         self.authValidation = authValidation
+        self.authService = authService
     }
     
     func loginUser(email: String?, password: String?) {
@@ -33,7 +36,7 @@ class LoginViewModel {
             let email = try authValidation.validateEmail(email)
             let password = try authValidation.validatePassword(password)
             
-            AuthService.shared.loginUser(email: email, password: password) { [weak self] response in
+            authService.loginUser(email: email, password: password) { [weak self] response in
                 guard let self = self else { return }
                 
                 switch response {
@@ -69,7 +72,7 @@ class LoginViewModel {
             let email = try authValidation.validateEmail(email)
             let password = try authValidation.validatePassword(password)
             
-            AuthService.shared.registerUser(email: email, password: password) { [weak self] response in
+            authService.registerUser(email: email, password: password) { [weak self] response in
                 guard let self = self else { return }
                 
                 switch response {

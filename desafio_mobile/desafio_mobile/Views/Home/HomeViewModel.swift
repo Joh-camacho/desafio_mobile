@@ -29,7 +29,7 @@ class HomeViewModel: NSObject {
     weak var delegate: HomeViewDelegate?
     
     func loadLastLocation() {
-        guard let user = AuthService.shared.getCurrentUser() else { return }
+        guard let user = AuthService.getCurrentUser() else { return }
         
         FirestoreService.shared.getUserInfo(userUid: user.uid) { [weak self] response in
             guard let self = self else { return }
@@ -97,7 +97,7 @@ extension HomeViewModel: CLLocationManagerDelegate {
             "longitude": longitude
         ])
         
-        if let user = AuthService.shared.getCurrentUser() {
+        if let user = AuthService.getCurrentUser() {
             FirestoreService.shared.updateUserLocation(userUid: user.uid, latitude: latitude, longitude: longitude)
             CoredataService.shared.updateUserLocation(userUid: user.uid, latitude: latitude, longitude: longitude)
         }
